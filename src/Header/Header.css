@@ -1,0 +1,11 @@
+header {
+    background-color: yellow;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+header p {
+    padding-right: 50%;
+}
