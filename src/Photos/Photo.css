@@ -1,13 +1,8 @@
-.photo img{
+.photo{
     width: 300px;
     height: 168px;
     object-fit: cover;
-    flex-direction: column;
-    padding: 10px 10px;    
-    transition: 0.3s;
-} 
-
-.photo:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
 }

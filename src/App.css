@@ -8,8 +8,9 @@ body {
 
 main {
     margin: 0 auto;
-    width: 1200px;
+    width: 80vw;
     display: flex;
     flex-direction: row;
+    max-width: 2000px;
 }
 

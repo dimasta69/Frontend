@@ -1,0 +1,27 @@
+.conteiner {
+    margin: 10px 10px;
+    color: red;
+}
+
+.conteiner p{
+    margin: 0;
+}
+
+.conteiner img{
+    width: 300px;
+    height: 168px;
+    object-fit: cover;
+    flex-direction: column;
+    transition: 0.3s ease;
+} 
+
+.conteiner img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transform-origin: center center;
+    color:yellow;
+}
+
+.conteiner:hover {
+    color:yellow;
+}
