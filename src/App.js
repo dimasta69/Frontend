@@ -4,22 +4,22 @@ import "./App.css"
 
 import Header from './Header/Header.jsx'
 import Category from './Category/Category.jsx'
-import Photos from './Photos/Photos.jsx'
+import Content from './Content/Content.jsx';
 
 function App() {
   return (
-    <div className='body'>
+    <body>
 
       <Header />
 
-      <main className='main'>
+      <main>
 
         <Category />
-        <Photos />
+        <Content />
 
       </main>
 
-    </div> 
+    </body>
   );
 }
 

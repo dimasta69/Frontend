@@ -1,11 +1,14 @@
 header {
-    background-color: yellow;
+    background-color: #161615;
     width: 100%;
     text-align: center;
     margin: 0;
     padding: 10px 0;
 }
 
-header p {
-    padding-right: 50%;
+header h1 {
+    padding-right: 900px;
+    margin: 0;
+    color: orange;
+    font-family: math; 
 }
