@@ -1,6 +1,6 @@
 .conteiner {
     margin: 10px 10px;
-    color: red;
+    color: #605b53;
 }
 
 .conteiner p{
@@ -8,8 +8,6 @@
 }
 
 .conteiner img{
-    width: 300px;
-    height: 168px;
     object-fit: cover;
     flex-direction: column;
     transition: 0.3s ease;
@@ -19,9 +17,8 @@
     cursor: pointer;
     transform: scale(1.1);
     transform-origin: center center;
-    color:yellow;
 }
 
 .conteiner:hover {
-    color:yellow;
+    color:#7a756c;
 }

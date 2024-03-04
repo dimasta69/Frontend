@@ -1,8 +1,13 @@
 .photo{
-    width: 300px;
-    height: 168px;
     object-fit: cover;
     flex-direction: row;
     position: relative;
     overflow: hidden;
+    width: 300px;
+    height: 172px;
+}
+
+.photo img{
+    width: 300px;
+    height: 172px;
 }
