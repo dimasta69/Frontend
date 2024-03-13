@@ -1,0 +1,24 @@
+.box {
+    display: flex;
+    background-color: #161615;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box img:first-child{
+    width: auto;
+    height: 13px;
+    filter: brightness(0) invert(3%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+    margin-top: 5px;
+}
+
+.box p{
+    color: #605b53;
+}
+
+.message {
+    width: auto;
+    height: 20px;
+    filter: invert(40%);
+    margin-top: 2px;
+}   
