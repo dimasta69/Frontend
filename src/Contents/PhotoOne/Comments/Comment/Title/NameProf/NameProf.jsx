@@ -6,7 +6,7 @@ import './NameProf.css';
 const NameProf = () => {
     return (
         <div className="nameprof">
-            <p>Dimasta</p>
+            Dimasta
         </div>
     )
 }

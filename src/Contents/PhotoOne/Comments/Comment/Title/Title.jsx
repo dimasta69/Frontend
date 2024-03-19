@@ -7,9 +7,9 @@ import NameProf from "./NameProf/NameProf";
 
 const Title = () => {
     return (
-        <div className="title">
-            <NameProf />
+        <div className="title1">
             <Time />
+            <NameProf />
         </div>
     )
 }

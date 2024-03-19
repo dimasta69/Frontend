@@ -7,7 +7,7 @@ import './Text.css';
 const Text = () => {
     return (
         <div className="text">
-            <p>dsdsdsds</p>
+            dsdsdsds
         </div>
     )
 }

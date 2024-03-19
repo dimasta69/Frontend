@@ -5,12 +5,12 @@ import './Category.css'
 const Category = () => {
     return (
         <div className="category">
-            <a href="">suka</a>
-            <a href="">suka</a>
-            <a href="">suka</a>
-            <a href="">suka</a>
-            <a href="">suka</a>
-            <a href="">suka</a>
+            <a href="">cat</a>
+            <a href="">cat</a>
+            <a href="">cat</a>
+            <a href="">cat</a>
+            <a href="">cat</a>
+            <a href="">cat</a>
         </div>
     )
 }

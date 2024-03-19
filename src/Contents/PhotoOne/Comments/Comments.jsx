@@ -5,7 +5,9 @@ import Comment from "./Comment/Comment";
 
 const Comments = () => {
     return (
-        <div>
+        <div className="comments">
+            <Comment />
+            <Comment />
             <Comment />
         </div>
     )
