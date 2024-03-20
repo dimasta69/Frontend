@@ -4,11 +4,18 @@
     padding: 25px 15px;
     margin: 0;
     text-align: center;
-    
 }
 
 .category a{
     margin: 5px;
     color: #e0ac56;
     font-family: Tahoma;
+    text-decoration: none;
+}
+
+.category a:hover{
+    margin: 5px;
+    color: #e0ac56;
+    font-family: Tahoma;
+    text-decoration:underline;
 }

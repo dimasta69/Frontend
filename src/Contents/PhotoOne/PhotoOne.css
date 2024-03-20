@@ -9,3 +9,22 @@
     padding: 0;
     margin: 0;
 }
+
+.buttons {
+    height:50px;
+    width: 50px;
+    margin: 10px;
+    background-color: #1f1f1f;
+    background-image: url(3.png);
+    border: none;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    height:50px;
+    width: 50px;
+    margin: 10px;
+    background-color: #1f1f1f;
+    background-image: url(4.png);
+    border: none;
+}

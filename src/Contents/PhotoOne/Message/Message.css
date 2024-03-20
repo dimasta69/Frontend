@@ -1,0 +1,47 @@
+.messages{
+    padding-block-end: 50px;
+    width: 482px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.messages textarea{
+    width: 90%;
+    white-space: pre-wrap;
+    padding: 0;
+    margin: 0;
+    resize: none;
+    height: 30px;
+    background-color: darkgray;
+    caret-color: aliceblue;
+}
+
+.messages button{
+    height: 30px;
+    width: 6%;
+    padding: 0;
+    margin: 0 10px;
+    background-image: url(1.png);
+    background-color: #1f1f1f;
+    border: none;
+    background-size: cover;
+    background-size: 30px auto;
+    background-position: center;
+    cursor: pointer;
+}
+
+.messages button:hover{
+    height: 30px;
+    width: 6%;
+    padding: 0;
+    margin: 0 10px;
+    background-image: url(2.png);
+    background-color: #1f1f1f;
+    border: none;
+    background-size: cover;
+    background-size: 30px auto;
+    background-position: center;
+}
