@@ -1,16 +1,15 @@
 import React from "react";
 import './Category.css'
 
+import Categor from "./Categor/Categor";
 
 const Category = () => {
     return (
         <div className="category">
-            <a href="">cat</a>
-            <a href="">cat</a>
-            <a href="">cat</a>
-            <a href="">cat</a>
-            <a href="">cat</a>
-            <a href="">cat</a>
+            <Categor />
+            <Categor />
+            <Categor />
+            <Categor />
         </div>
     )
 }
