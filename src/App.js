@@ -6,11 +6,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Header/Header.jsx' 
 import Category from './Category/Category.jsx' 
 import Content from './Content/Content.jsx'; 
-import Contents from './Contents/Contents.jsx'; 
+import Contents from './Contents/Contents.jsx';
+import RegistrationForm from './RegistrationForm/RegistrationForm.jsx';
+import LoginForm from './LoginForm/LoginForm.jsx';
  
 function App() { 
   return ( 
-    <body> 
+    <body>
+      <RegistrationForm />
+      <LoginForm />
       <Header /> 
       <main> 
         <Category /> 

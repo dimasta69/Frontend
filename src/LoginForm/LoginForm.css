@@ -1,0 +1,73 @@
+.logform {
+    position:absolute;
+    z-index: 1000;
+    background-color: rgb(50,50,50);
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: fit-content;
+    margin: 0 auto;
+    top:30%;
+    left:40%;
+    color: #c28e2e;
+}
+
+.logform input {
+    width: 80%;
+    background-color: rgb(25,25,25);
+    color: #c28e2e;
+    outline: none;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    margin: 0.2vw;
+    font-size: 1vw;
+}
+
+.logform button {
+    width: 50%;
+    outline: none;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    margin: 0.2vw;
+    font-size: 1.1vw;
+    font-weight: bolder;
+    background-color: #c28e2e;
+    color: rgb(25,25,25);
+    cursor: pointer;
+}
+
+.logform button:hover {
+    color: #c28e2e;
+    background-color: rgb(25,25,25);
+}
+
+.logform h1 {
+    margin: 0;
+    padding: 0.2vw 0;
+    margin-bottom: 0.2vw;
+    background-color: rgb(25,25,25);
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 1.5vw;
+    border-top-right-radius: 1.5vw;
+}
+
+.hidden {
+    display: none;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top:0;
+    padding: 0;
+    margin: 0;
+    margin-top: 0.4vw;
+    margin-right: 0.8vw;
+    text-decoration: underline;
+}

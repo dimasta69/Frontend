@@ -4,11 +4,28 @@ header {
     text-align: center;
     margin: 0;
     padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
     padding-right: 900px;
     margin: 0;
     color: orange;
-    font-family: math; 
+    font-family: math;
+}
+header a {
+    margin: 0 10px;
+    text-decoration: underline;
+    color: orange;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
 }

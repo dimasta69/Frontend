@@ -9,26 +9,32 @@
     position: relative;
 }
 
-.gonchar {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.hidden li{
+.hidden{
     display: none;
-}
-
-.sort a{
-    color: red;
-    text-decoration: none;
 }
 
 .ganji{
     color: #e0ac56;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .ganji:hover{
     color: #c28e2e;
     text-decoration:underline;
+}
+
+.list {
+    position: absolute;
+    top:100%;
+    right: 0;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.3);
+    color: #c28e2e;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 0 5px;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
 }
