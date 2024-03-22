@@ -1,0 +1,12 @@
+.box1 {
+    background-color: #161615;
+    margin: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 9px;
+    padding-right: 5px;
+    width: 100%;
+    max-width: 467px;
+    color: #605b53;
+}
