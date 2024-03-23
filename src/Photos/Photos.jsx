@@ -1,6 +1,6 @@
 import React from "react";
-import "./Photos.css"
-import Conteiner from "./Conteiner"
+import "./Photos.css";
+import Conteiner from "./Conteiner";
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 
@@ -13,7 +13,7 @@ const Photos = () => {
             <Conteiner />
             <Conteiner />
         </div>
-    )
+    );
 }
 
-export default Photos
+export default Photos;

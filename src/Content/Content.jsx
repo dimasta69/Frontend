@@ -7,8 +7,12 @@ import Pagination from "../Pagination/Pagination.jsx";
 
 
 const Content = () => {
+    let srch = function(event) {
+        console.log(event.target.value)
+    }
     return (
         <div className="content">
+            <input id="search" className="search" type="text" placeholder="Поиск..." onInput={srch}/>
             <Head />
             <Photos />
             <Pagination />

@@ -70,4 +70,20 @@
     margin-top: 0.4vw;
     margin-right: 0.8vw;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.close:hover {
+    text-decoration: none;
+}
+
+.bg {
+    position: absolute;
+    z-index: 999;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
 }
