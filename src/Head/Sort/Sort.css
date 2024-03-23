@@ -29,7 +29,6 @@
     top:100%;
     right: 0;
     width: fit-content;
-    background-color: rgba(0,0,0,0.3);
     color: #c28e2e;
     cursor: pointer;
     z-index: 1000;
@@ -37,4 +36,20 @@
     margin: 0;
     text-decoration: none;
     list-style-type: none;
+}
+
+.list a{
+    color: #e0ac56;
+    text-decoration: none;
+}
+
+
+.list li{
+    background-color: rgba(16,16,15,0.9);
+    border-bottom: 1px solid #2b2a29; /* Полоса в конце комментария */
+    padding: 0 6px;
+}
+
+.list li:hover{
+    background-color:#2b2a29;
 }
