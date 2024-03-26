@@ -27,7 +27,7 @@
     font-size: 1vw;
 }
 
-.logform button {
+.logform button:last-child {
     width: 50%;
     outline: none;
     border: none;
@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 
-.logform button:hover {
+.logform button:hover:last-child{
     color: #c28e2e;
     background-color: rgb(25,25,25);
 }
@@ -67,10 +67,16 @@
     top:0;
     padding: 0;
     margin: 0;
-    margin-top: 0.4vw;
-    margin-right: 0.8vw;
     text-decoration: underline;
     cursor: pointer;
+    width: 15px;
+    margin-top: 0.4vw;
+    margin-right: 0.8vw;
+    height: 15px;
+    background-color: rgb(25,25,25);
+    background-image: url('5.png');
+    background-size: cover; 
+    border: none;   
 }
 
 .close:hover {

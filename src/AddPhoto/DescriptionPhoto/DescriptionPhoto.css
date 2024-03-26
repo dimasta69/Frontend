@@ -1,0 +1,18 @@
+.descriptionPhoto{
+    padding-top: 30px;
+}
+
+.descriptionLabel{
+    color: white;
+    padding-right: 120px;
+}
+
+.descriptionInput{
+    background-color: rgb(65, 62, 62);
+    padding-left: 10px;
+    width: 200px;
+    height: 60px;
+    border-radius: 0.5vw;
+    resize: none;
+    border: none;
+}

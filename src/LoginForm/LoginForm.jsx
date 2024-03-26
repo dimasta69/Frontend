@@ -35,7 +35,7 @@ function LoginForm() {
     return(
         <div id="bglog" className="bg hidden">
             <div id="logform" className='logform'>
-                <p id="close" className='close' onClick={cls}>Close</p>
+                <button id="close" className='close' onClick={cls}></button>
                 <h1>Login</h1>
                 <input className="login" type="text" placeholder='Login'/>
                 <input className="password" type="password" placeholder='Password'/>

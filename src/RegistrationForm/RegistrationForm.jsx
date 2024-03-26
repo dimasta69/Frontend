@@ -10,8 +10,8 @@ function RegistrationForm() {
     return(
         <div id="bgreg" className="bg hidden">
             <div id="regform" className='regform'>
-                <p id="close" className='close' onClick={cls}>Close</p>
-                <h1>Registration</h1>
+                <button id="close" className='close' onClick={cls}></button>
+                <h1>Регистрация</h1>
                 <input className="name" type="text" placeholder='First Name'/>
                 <input className="surname" type="text" placeholder='Last Name'/>
                 <input className="login" type="text" placeholder='Login'/>

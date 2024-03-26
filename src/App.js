@@ -9,6 +9,7 @@ import Content from './Content/Content.jsx';
 import Contents from './Contents/Contents.jsx';
 import RegistrationForm from './RegistrationForm/RegistrationForm.jsx';
 import LoginForm from './LoginForm/LoginForm.jsx';
+import AddPhoto from './AddPhoto/AddPhoto.jsx';
  
 function App() { 
   return ( 
@@ -20,8 +21,9 @@ function App() {
         <Category /> 
         <BrowserRouter> 
           <Routes> 
+            <Route path='/' element={<Content />} />
             <Route path='/1/' element={<Contents className="contents" />}/> 
-            <Route path='/' element={<Content />} /> 
+            <Route path='/add_photo/' element={<AddPhoto className="AddPhoto" />}/>  
           </Routes> 
         </BrowserRouter> 
       </main> 

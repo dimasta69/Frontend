@@ -7,8 +7,9 @@
 
 .search {
     box-sizing: border-box;
-    width: 20%;
-    margin: 0.2vw auto;
+    width: 25%;
+    height: 30px;
+    margin: 0.4vw auto;
     background-color: rgb(25,25,25);
     border: none;
     outline: none;

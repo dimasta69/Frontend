@@ -1,0 +1,15 @@
+.titlePhoto{
+}
+
+.labelPhoto{
+    color:white;
+    padding-right: 30px;
+}
+
+.inputName{
+    background-color: rgb(65, 62, 62);
+    padding-left: 10px;
+    width: 200px;
+    border-radius: 0.5vw;
+    border: none;
+}
