@@ -10,6 +10,7 @@ import Contents from './Contents/Contents.jsx';
 import RegistrationForm from './RegistrationForm/RegistrationForm.jsx';
 import LoginForm from './LoginForm/LoginForm.jsx';
 import AddPhoto from './AddPhoto/AddPhoto.jsx';
+import MyPhoto from './MyPhoto/MyPhoto.jsx';
  
 function App() { 
   return ( 
@@ -23,7 +24,8 @@ function App() {
           <Routes> 
             <Route path='/' element={<Content />} />
             <Route path='/1/' element={<Contents className="contents" />}/> 
-            <Route path='/add_photo/' element={<AddPhoto className="AddPhoto" />}/>  
+            <Route path='/add_photo/' element={<AddPhoto className="AddPhoto" />}/>
+            <Route path='/my_photo/' element={<MyPhoto/>} />  
           </Routes> 
         </BrowserRouter> 
       </main> 

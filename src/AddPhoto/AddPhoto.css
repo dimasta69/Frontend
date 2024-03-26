@@ -1,4 +1,8 @@
 .addPhoto{
     padding-top: 33px;
-    padding-left: 40px;
+    padding-left: 180px;
+}
+
+.addButton{
+    margin: 50px 150px;
 }

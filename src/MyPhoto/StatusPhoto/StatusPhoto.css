@@ -1,0 +1,12 @@
+.statusPhoto{
+    display: flex;
+    flex-direction: row;
+    margin: 10px  40px;
+    flex-wrap: nowrap;
+}
+
+.statusPhoto a{
+    margin: 0 auto;
+    text-wrap: nowrap;
+    padding: 0 4px;
+}
