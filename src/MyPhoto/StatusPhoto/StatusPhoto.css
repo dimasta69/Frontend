@@ -9,4 +9,10 @@
     margin: 0 auto;
     text-wrap: nowrap;
     padding: 0 4px;
+    color: orange;
+    text-decoration: none;
+}
+
+.statusPhoto a:hover{
+    text-decoration:underline;
 }
