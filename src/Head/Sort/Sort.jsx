@@ -13,8 +13,9 @@ const Sort = () => {
             <p id="ganji" onClick={somefunc} className="ganji">текст</p>
             <p>Сортировка:</p>
             <ul className="list hidden" id ='list'>
-                <li><a href=' '>Ssilka1</a></li>
-                <li><a href=' '>Ssilka2</a></li>
+                <li><a href=' '>Количество голосов</a></li>
+                <li><a href=' '>Количество коментариев</a></li>
+                <li><a href=' '>Дата добавлени</a></li>
             </ul>
         </nav>
     )

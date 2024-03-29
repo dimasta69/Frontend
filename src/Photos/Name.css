@@ -1,16 +1,12 @@
 .name {
     display: flex;
     background-color: #161615;
-    justify-content: center;
     flex-direction: row;
+    max-width: 300px;
+    justify-content: space-between; /* Располагаем элементы по краям контейнера */
+    align-items: center;
 }
 
-.name img:first-child{
-    width: auto;
-    height: 13px;
-    filter: brightness(0) invert(3%) sepia(100%) saturate(10000%) hue-rotate(0deg);
-    margin-top: 5px;
-}
 
 .message {
     width: auto;
@@ -18,3 +14,20 @@
     filter: invert(40%);
     margin-top: 2px;
 }   
+
+.like{
+    width: auto;
+    height: 13px;
+    filter: brightness(0) invert(3%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+    margin-top: 5px;
+}
+
+.like-container {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.com-container {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по вертикали */
+}

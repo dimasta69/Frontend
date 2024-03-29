@@ -4,10 +4,10 @@ import './Title.css'
 
 import Name from "./Name";
 
-const Title = () => {
+const Title = ({ name, like, comments}) => {
     return (
         <div className="title">
-            <Name />
+            <Name name={name} like={like} comments={comments}/>
         </div>
     )
 }

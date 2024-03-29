@@ -5,14 +5,18 @@ import Message from "./../message.png"
 import "./Name.css"
 
 
-const Name = () => {
+const Name = ({ name, like, comments}) => {
     return (
         <div className="name">
-            <img src={Like} />
-            <p style={{padding: '0 0px'}}>1213</p>
-            <p style={{padding: '0 60px'}}>Name</p>
+            <div className="like-container">
+        <img src={Like} className="like"/>
+        <p className="likec">{like}</p>
+    </div>
+            <p className="name1">{name}</p>
+            <div className="com-container">
+            <p>{comments}</p>
             <img src={Message} className="message"/>
-            <p style={{padding: '0 2px'}}>10120</p>
+            </div>
         </div>
     )
 }
