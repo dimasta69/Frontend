@@ -1,11 +1,14 @@
 import React from "react";
 import "./NamePhoto.css"
 
-const NamePhoto = () => {
+const NamePhoto = ({data}) => {
+    if (!data) { 
+        return <div className="loading"></div>; 
+    } 
     return (
         <div className="name_photo">
             <h2>
-                Здесь будет наименование фотографии 
+                {data.title} 
             </h2>
         </div>
     )

@@ -11,6 +11,7 @@ header {
     align-items: center;
 }
 
+
 header h1 {
     margin: 0;
     color: orange;
@@ -21,10 +22,11 @@ header a {
     margin: 0 10px;
     text-decoration: underline;
     color: orange;
+    text-decoration: none;
 }
 
 header a:hover {
-    text-decoration: none;
+    color:darkorange;
 }
 
 .hidden {

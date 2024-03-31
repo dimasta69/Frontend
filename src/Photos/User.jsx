@@ -3,10 +3,8 @@ import React from "react";
 import "./User.css"
 
 const User = ({name, time}) => {
-    // Преобразуем строку времени в объект Date
     const dateTime = new Date(time);
 
-    // Устанавливаем часовой пояс (например, UTC)
     dateTime.setTime(dateTime.getTime() + dateTime.getTimezoneOffset()*60*1000);
 
     // Форматируем дату и время в нужный вид

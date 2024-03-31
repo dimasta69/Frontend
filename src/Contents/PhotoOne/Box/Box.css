@@ -1,8 +1,9 @@
 .box {
-    display: flex;
     background-color: #161615;
-    justify-content: center;
-    flex-direction: row;
+    margin: 1px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 481px;
 }
 
 .box img:first-child{
@@ -22,3 +23,7 @@
     filter: invert(40%);
     margin-top: 2px;
 }   
+
+.ppp {
+    display: flex;
+}

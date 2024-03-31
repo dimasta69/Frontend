@@ -16,7 +16,7 @@ const Conteiner = ({ photoData }) => {
     }
     return (
         <div className="conteiner">
-            <Photo onMouseEnter={showDesc} onMouseLeave={hideDesc} photo={photoData.photo_space}/>
+            <Photo onMouseEnter={showDesc} onMouseLeave={hideDesc} photo={photoData.photo_space} description={photoData.description}/>
             <Title name={photoData.title} like={photoData.number_of_likes} comments={photoData.number_of_comments}/>
             <User name={photoData.user.username} time={photoData.publicated_at}/>
         </div>

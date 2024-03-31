@@ -17,7 +17,7 @@ const Header = () => {
 
     return (
         <header>
-            <h1>PhotoCraft</h1>
+            <h1><a href="http://localhost:3000">PhotoCraft</a></h1>
             <div id="logreg" className="logReg">
                 <a id="enter" href=" " onClick={enter}>Войти</a>
                 <a id="register" href=" " onClick={register} >Регистрация</a>

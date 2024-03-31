@@ -8,7 +8,7 @@ const Photo = (props) => {
 
     return (
         <div className="photo" onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
-            <div id="description" className="description hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, ut?</div>
+            <div id="description" className="description hidden">{props.description}</div>
             <img src={imageUrl} />
         </div>
     );
