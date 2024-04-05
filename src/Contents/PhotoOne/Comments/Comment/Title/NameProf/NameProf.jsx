@@ -3,10 +3,10 @@ import React from "react";
 import './NameProf.css';
 
 
-const NameProf = () => {
+const NameProf = ({user}) => {
     return (
         <div className="nameprof">
-            Dimasta
+            {user}
         </div>
     )
 }

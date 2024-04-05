@@ -1,0 +1,21 @@
+.change_photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; 
+}
+
+.change_photo input{
+    float: right;
+    margin-top: 15px;
+    background-color: #161615;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
+}
+
+.title2 {
+    text-align: center; 
+    margin-top: 20px; 
+    color: #605b53;
+}

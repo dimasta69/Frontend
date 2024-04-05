@@ -4,10 +4,10 @@ import './Text.css';
 
 
 
-const Text = () => {
+const Text = ({text}) => {
     return (
         <div className="text">
-            dsdsdsds
+            {text}
         </div>
     )
 }

@@ -1,7 +1,8 @@
 .comment {
-    margin: 15px 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid black; /* Полоса в начале комментария */
-    border-bottom: 1px solid black; /* Полоса в конце комментария */
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+    justify-content: space-between;
 }

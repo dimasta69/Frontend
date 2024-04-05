@@ -8,12 +8,12 @@ const Box1 = ({data}) => {
 
     dateTime.setTime(dateTime.getTime() + dateTime.getTimezoneOffset()*60*1000);
 
-    // Форматируем дату и время в нужный вид
     const formattedDate = dateTime.toLocaleDateString('en-GB', {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric'
     });
+
 
     const formattedTime = dateTime.toLocaleTimeString('en-GB', {
         hour: '2-digit',

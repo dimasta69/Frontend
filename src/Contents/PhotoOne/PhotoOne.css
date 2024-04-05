@@ -10,7 +10,7 @@
     margin: 0;
 }
 
-.buttons {
+.buttons1 {
     height:50px;
     width: 50px;
     margin: 10px;
@@ -20,7 +20,16 @@
     cursor: pointer;
 }
 
-.buttons:hover{
+.buttons1:hover{
+    height:50px;
+    width: 50px;
+    margin: 10px;
+    background-color: #1f1f1f;
+    background-image: url(4.png);
+    border: none;
+}
+
+.buttons1:active {
     height:50px;
     width: 50px;
     margin: 10px;
@@ -32,4 +41,74 @@
 .center {
     display: flex;
     justify-content: center;
+}
+
+.butLike {
+    height:50px;
+    width: 50px;
+    margin: 10px;
+    background-color: #1f1f1f;
+    background-image: url(4.png);
+    border: none;
+}
+
+.butLike:hover {
+    height:50px;
+    width: 50px;
+    margin: 10px;
+    background-color: #1f1f1f;
+    background-image: url(3.png);
+    border: none;
+    cursor: pointer;
+}
+
+.category3 {
+    color:white;
+    width: 470px;
+    padding-left: 10px;
+    padding-block-end: 20px;
+}
+
+.but3{
+    float: right;
+    margin-top: 15px;
+    background-color:  #161615;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.but3:hover{
+    float: right;
+    background-color:  #272726;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
+}
+
+.butt {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 30px;
+}
+
+.but4{
+    float: right;
+    margin-top: 15px;
+    background-color:  rgb(121, 6, 6);
+    border: solid rgb(83, 5, 5);
+    color: #605b53;
+    cursor: pointer;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.but4:hover{
+    background-color:  rgb(83, 5, 5);
+    border: solid rgb(83, 5, 5);;
+    color: #605b53;
+    cursor: pointer;
 }

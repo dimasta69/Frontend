@@ -6,6 +6,15 @@ import "./Content.css"
 import Photos from "../Photos/Photos.jsx" 
 import Head from "../Head/Head.jsx" 
 import Pagination from "../Pagination/Pagination.jsx"; 
+
+
+
+const axiosInstance = axios.create({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Token ' + localStorage.getItem('token')
+    }
+  });
  
 const Content = () => { 
    
@@ -30,19 +39,32 @@ const Content = () => {
          else { 
             Url = 'http://127.0.0.1:8000/core_api/photos/'; 
         } 
- 
-        axios.get(Url) 
-        .then(response => {  
-            setDataFromBackend(response.data); 
-        })  
-        .catch(error => {  
-            console.error(error);  
-        }); 
+        
+        if(localStorage.getItem('token')){
+            axiosInstance.get(Url) 
+            .then(response => {  
+                setDataFromBackend(response.data); 
+                console.log(response.headers); 
+            })  
+            .catch(error => {  
+                console.error(error);  
+            }); 
+        }
+        else {
+            axios.get(Url) 
+            .then(response => {  
+                setDataFromBackend(response.data); 
+                console.log(response.headers); 
+            })  
+            .catch(error => {  
+                console.error(error);  
+            }); 
+        }
 
         if (category){
  
         let Url1 = 'http://127.0.0.1:8000/core_api/category/' + category 
-        axios.get(Url1) 
+        axiosInstance.get(Url1) 
             .then(response => {  
                 setDataCat(response.data); 
             })  

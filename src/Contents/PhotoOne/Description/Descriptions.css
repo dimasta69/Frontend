@@ -4,3 +4,12 @@
     padding-left: 10px;
     padding-block-end: 20px;
 }
+
+.res {
+    background-color: #272726;
+    height: 50px;
+    width: 450px;
+    color: white;
+    resize: none;
+    border: none;
+}

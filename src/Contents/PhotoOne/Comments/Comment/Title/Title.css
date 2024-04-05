@@ -4,3 +4,53 @@
     color: orange;
 }
 
+.b1 {
+    margin-left: auto;
+    background-image: url(5.png);
+    cursor: pointer;
+    width: 15px;
+    margin-top: 0.25vw;
+    height: 15px;
+    background-color: #1f1f1f;
+    background-image: url('5.png');
+    background-size: cover; 
+    border: none;  
+    margin-left: 5px;
+    
+}
+
+.b2 {
+    margin-left: auto;
+    background-image: url(5.png);
+    cursor: pointer;
+    width: 17px;
+    margin-top: 0.20vw;
+    height: 17px;
+    background-color: #1f1f1f;
+    background-image: url('7.png');
+    background-size: cover; 
+    border: none;  
+    margin-left: 5px;
+    
+}
+
+.b3 {
+    margin-left: auto;
+    background-image: url(5.png);
+    cursor: pointer;
+    width: 17px;
+    margin-top: 0.20vw;
+    height: 17px;
+    background-color: #1f1f1f;
+    background-image: url('8.png');
+    background-size: cover; 
+    border: none;  
+    margin-left: 5px;
+    
+}
+
+.rep {
+    display: flex;
+    flex-direction: row;
+    color: orange;
+}

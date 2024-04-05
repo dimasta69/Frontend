@@ -9,7 +9,6 @@ const Head = ({dataCat}) => {
         return <div className="loading"></div>; 
     } 
  
-    console.log(JSON.stringify(dataCat)); 
      
     if (dataCat) { 
         if (dataCat == 'Все фотографии')
