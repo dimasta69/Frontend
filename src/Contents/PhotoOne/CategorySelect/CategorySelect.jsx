@@ -8,6 +8,13 @@ const CategorySelect = ({ category_change, dataCategory, setCategory }) => {
     setSelectedCategory(selectedValue)
   };
 
+  if(!dataCategory)
+  {
+    return (
+      <div></div>
+    )
+  }
+
 
   return (
     <div className='category_select'>

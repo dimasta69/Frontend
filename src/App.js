@@ -24,6 +24,7 @@ function App() {
         <BrowserRouter> 
           <Routes> 
             <Route path='/' element={<Content />} />
+            <Route path='/sort_by/:sort_by?/:asc?' element={<Content />} />
             <Route path='/category/:category?' element={<Content/>} />
             <Route path='/photo/:id?/' element={<Contents className="contents" dataCategory={dataCategory}/>}/> 
             <Route path='/add_photo/' element={<AddPhoto className="AddPhoto" />}/>

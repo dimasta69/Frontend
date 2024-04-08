@@ -5,9 +5,8 @@ import { useParams } from 'react-router-dom';
 import './Comments.css';
 import Comment from "./Comment/Comment";
 
-const Comments = ({id, SetReply, SetChange}) => {
-    const [dataFromBackend, setDataFromBackend] = useState(null); 
-    let Url = 'http://127.0.0.1:8000/core_api/comments/?photo_id=' + id; 
+const Comments = ({id, SetReply, SetChange, dataFromBackend, setDataFromBackend, page}) => {
+    let Url = 'http://127.0.0.1:8000/core_api/comments/?photo_id=' + id + '&page=' + page; 
     useEffect(() => {
         axios.get(Url)
             .then(response => {
@@ -51,16 +50,15 @@ const Comments = ({id, SetReply, SetChange}) => {
                 return (
                     
                     <div  style={{ textDecoration: 'none', 'margin-top': '20px' }} href={rl}>
-                        <Comment data={item} user_id={localStorage.getItem('user_id')} reply = {1} SetReply={SetReply} SetChange={SetChange}/>
+                        <Comment data={item}  user_id={localStorage.getItem('user_id')} reply = {1} SetReply={SetReply} SetChange={SetChange}/>
                     </div>
-                    
                 );
                 }
                 else {
                     return (
                     
                         <div  style={{ textDecoration: 'none', 'padding-left': '25px', 'margin-top': '20px'}} href={rl}>
-                            <Comment data={item} user_id={localStorage.getItem('user_id')}/> 
+                            <Comment data={item} user_id={localStorage.getItem('user_id')} SetChange={SetChange}/> 
                         </div>
                         
                     );

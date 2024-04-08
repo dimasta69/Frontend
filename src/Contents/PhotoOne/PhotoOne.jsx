@@ -4,7 +4,7 @@ import "./PhotoOne.css";
 import Box from "./Box/Box";
 import Box1 from "./Box1/Box1";
 import Comments from "./Comments/Comments";
-import Pagination from "../../Pagination/Pagination";
+import Pagination2 from "./Pagination2/Pagination2";
 import Message from "./Message/Message";
 import Descriptions from "./Description/Descriptions";
 import CategorySelect from "./CategorySelect/CategorySelect";
@@ -27,6 +27,14 @@ const axiosPost = axios.create({
 
 
 const PhotoOne = ({ data, like, dataCategory}) => {
+
+    const [page, setPage] = useState('1')
+
+    const fetchData = (data) => {
+        setPage(data);
+    }
+
+    const [dataFromBackend, setDataFromBackend] = useState(null); 
 
         const [category_post, setCategoryPost] = useState(null)
         const [photo_post, setPhotoPost] = useState(null)
@@ -67,6 +75,18 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         }
 
         const DeletePost = () => {
+            let Url = 'http://127.0.0.1:8000/core_api/photo/' + data.id + '/'
+
+            axiosPost.delete(Url)
+            .then(response => {
+                window.location.reload();
+            }
+            ).catch(error => {
+                console.error(error);
+            });
+        }
+
+        const ChangeDeletePost = () => {
             let Url = 'http://127.0.0.1:8000/core_api/photo/' + data.id + '/'
 
             axiosPost.patch(Url)
@@ -141,6 +161,7 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         }
     }
 
+
     let category_title;
     if(!data.category)
     {
@@ -169,9 +190,11 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         status = 'Отклоненно'
     }
 
+
     const Avtorization = () => {
         if (localStorage.getItem('user_id') == data.user.id)
-        {   return(
+        {   if (status == 'На удалении'){
+             return(
                 <div>   
                     <ChangePhoto data={data} setPhoto={setPhoto} />
                     <p style={{ width: '480px', color: '#605b53' }}>Статус:</p>
@@ -182,11 +205,30 @@ const PhotoOne = ({ data, like, dataCategory}) => {
                     <CategorySelect category_change={category_title} dataCategory={dataCategory} setCategory={setCategory} />
                     <div className="butt">
                         <button className="but3" onClick={ChangePost}>Сохранить изменения</button>
-                        <button className="but4" onClick={DeletePost}>Удалить</button>
+                        <button className="but4" onClick={ChangeDeletePost}>Отменить удаление</button>
                     </div>
                     <p style={{ width: '480px', color: '#605b53' }}>Комментарии:</p>
                 </div>
             )
+             }
+             else {
+                return(
+                    <div>   
+                        <ChangePhoto data={data} setPhoto={setPhoto} />
+                        <p style={{ width: '480px', color: '#605b53' }}>Статус:</p>
+                        <p style={{ width: '480px', color: 'white', 'margin': '0 10px'}}>{status}</p>
+                        <p style={{ width: '480px', color: '#605b53' }}>Описание:</p>
+                        <Descriptions data={data} /> 
+                        <p style={{ width: '480px', color: '#605b53', 'padding': "5px 0"}}>Категория:</p>
+                        <CategorySelect category_change={category_title} dataCategory={dataCategory} setCategory={setCategory} />
+                        <div className="butt">
+                            <button className="but3" onClick={ChangePost}>Сохранить изменения</button>
+                            <button className="but4" onClick={DeletePost}>Удалить</button>
+                        </div>
+                        <p style={{ width: '480px', color: '#605b53' }}>Комментарии:</p>
+                    </div>
+                )
+             }
         }
         else if (localStorage.getItem('token')){
             return (
@@ -223,8 +265,8 @@ const PhotoOne = ({ data, like, dataCategory}) => {
                         <button onClick={enter} className={buttonStyle}></button>
                     </div>
                 <Avtorization />
-                <Comments id={data.id}/> 
-                <Pagination />
+                <Comments id={data.id} SetReply={SetReply} SetChange={SetChange} dataFromBackend= {dataFromBackend} setDataFromBackend={setDataFromBackend} page={page}/> 
+                <Pagination2 data={dataFromBackend} fetchData={fetchData}/>
                 <Message id={data.id} buttonReply={buttonReply} SetReply={SetReply} buttonChange={buttonChange} SetChange={SetChange}/>
             </div>
         );
@@ -237,8 +279,8 @@ const PhotoOne = ({ data, like, dataCategory}) => {
                     <Box data={data}/>
                     <Box1 data={data}/>
                 <Avtorization />
-                <Comments id={data.id} SetReply={SetReply} SetChange={SetChange}/>
-                <Pagination />
+                <Comments id={data.id} SetReply={SetReply} SetChange={SetChange} dataFromBackend= {dataFromBackend} setDataFromBackend={setDataFromBackend} page={page}/>
+                <Pagination2 data={dataFromBackend} fetchData={fetchData}/>
             </div>
         )
     }
@@ -254,8 +296,8 @@ const PhotoOne = ({ data, like, dataCategory}) => {
                         <button onClick={enter} className={buttonStyle1}></button>
                     </div>
                 <Avtorization />
-                <Comments id={data.id} SetReply={SetReply} SetChange={SetChange}/>
-                <Pagination />
+                <Comments id={data.id} SetReply={SetReply} SetChange={SetChange} dataFromBackend= {dataFromBackend} setDataFromBackend={setDataFromBackend} page={page}/>
+                <Pagination2 data={dataFromBackend} fetchData={fetchData}/>
                 <Message id={data.id} buttonReply={buttonReply} SetReply={SetReply} buttonChange={buttonChange} SetChange={SetChange}/>
             </div>
         );

@@ -26,9 +26,10 @@
 
 .list {
     position: absolute;
-    top:100%;
-    right: 0;
+    top: 20px;
+    left: 0;
     width: fit-content;
+    text-wrap: nowrap;
     color: #c28e2e;
     cursor: pointer;
     z-index: 1000;
@@ -46,10 +47,15 @@
 
 .list li{
     background-color: rgba(16,16,15,0.9);
-    border-bottom: 1px solid #2b2a29; /* Полоса в конце комментария */
+    border-bottom: 1px solid #2b2a29;
     padding: 0 6px;
 }
 
 .list li:hover{
     background-color:#2b2a29;
+}
+
+li a{
+    display: block;
+    width: 100%;
 }

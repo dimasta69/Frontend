@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./Pagination.css";
+import "./Pagination2.css";
 
-const Pagination = ({ data, fetchData }) => {
+const Pagination2 = ({ data, fetchData }) => {
     if (!data || !data.pagination) {
         return <div className="loading"></div>;
     }
@@ -52,4 +52,4 @@ const Pagination = ({ data, fetchData }) => {
     );
 };
 
-export default Pagination;
+export default Pagination2;
