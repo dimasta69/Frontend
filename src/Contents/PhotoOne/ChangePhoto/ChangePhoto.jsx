@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ChangePhoto.css";
 
 const ChangePhoto = ({ onFileChange, data, setPhoto }) => {
-    const [fileName, setFileName] = useState(""); // Состояние для хранения имени файла
+    const [fileName, setFileName] = useState(""); 
 
     const handleFileChange = (event) => {
         const fileInput = document.getElementById('fileInput');

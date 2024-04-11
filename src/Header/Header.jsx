@@ -28,8 +28,7 @@ const Header = () => {
           .catch(function (error) {
             console.log(error);
           });
-          localStorage.removeItem('token')
-          localStorage.removeItem('user_id')
+          localStorage.clear()
     }
 
 
@@ -45,8 +44,8 @@ const Header = () => {
             <header>
                 <h1><a href="http://localhost:3000">PhotoCraft</a></h1>
                 <div id="logreg" className="logReg">
-                <a id="cabinet" className="cabinet" href="">Личный кабинет</a>
-            <a id="my-photos" className="my-photos" href="http://localhost:3000/my_photo">Мои фото</a>
+                <a id="cabinet" className="cabinet" href="http://localhost:3000/profile">Личный кабинет</a>
+            <a id="my-photos" className="my-photos" href="http://localhost:3000/my_photo/status/Published">Мои фото</a>
             <a id="leave" className="leave" href=" " onClick={leave}>Выйти</a>
                 </div>
             </header>

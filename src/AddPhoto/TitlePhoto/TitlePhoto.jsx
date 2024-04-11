@@ -6,7 +6,7 @@ const TitlePhoto = () => {
     return (
         <div className='titlePhoto'>
             <label className="labelPhoto">Название фотографии:</label>
-            <input className="inputName"></input>
+            <input id='title' className="inputName"></input>
         </div>
     )
 }

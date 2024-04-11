@@ -40,10 +40,15 @@ const Content = () => {
         desc=""
     }
 
+    let Url; 
+    let src;
 
+    let srch = function(event) {  
+        src = '&search_filter=' + event.target.value
+        fetchData()
+    } 
 
     const fetchData = (page) => { 
-        let Url; 
         if (category){ 
             Url = 'http://127.0.0.1:8000/core_api/photos/?category_id=' + category
             if (!parm)
@@ -106,7 +111,14 @@ const Content = () => {
             {
                 Url = Url + '?order_by=' + desc + 'number_of_likes'
             } 
-        } 
+        }
+
+        if (src) {
+            Url += src;
+            console.log(Url)
+        }
+    
+        
         
         if(localStorage.getItem('token')){
             axiosInstance.get(Url) 
@@ -149,10 +161,9 @@ const Content = () => {
     useEffect(() => { 
         fetchData(1); 
     }, []); 
+
+    
  
-    let srch = function(event) { 
-        console.log(event.target.value) 
-    } 
  
     return ( 
         <div className="content" id='content'> 

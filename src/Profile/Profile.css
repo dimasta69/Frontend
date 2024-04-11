@@ -1,0 +1,39 @@
+.Profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    margin-top: 35px;
+}
+
+.image1 {
+    height: 200px;
+    width: 200px;
+    padding-block-end: 15px;
+}
+
+.buttons  {
+    width: 150px;
+    outline: none;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    margin: 0.2vw;
+    font-size: 1.1vw;
+    font-weight: bolder;
+    background-color: #c28e2e;
+    color: rgb(25,25,25);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.buttons:hover{
+    color: #c28e2e;
+    background-color: rgb(25,25,25);
+}
+
+.inputing{
+    background-color: gray;
+    margin-top: 10px;
+}

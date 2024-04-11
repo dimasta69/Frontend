@@ -1,4 +1,6 @@
 .titlePhoto{
+    display: flex;
+    justify-content: center;
 }
 
 .labelPhoto{

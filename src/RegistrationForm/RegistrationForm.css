@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
+    width: 27vw;
     height: fit-content;
     margin: 0 auto;
     top:30%;
@@ -27,7 +27,7 @@
     font-size: 1vw;
 }
 
-.regform button:last-child  {
+.buttons  {
     width: 50%;
     outline: none;
     border: none;
@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 
-.regform button:hover:last-child{
+.buttons:hover{
     color: #c28e2e;
     background-color: rgb(25,25,25);
 }

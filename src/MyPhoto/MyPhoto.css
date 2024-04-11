@@ -1,14 +1,46 @@
-.myP{
-    font-size: 1.5em;
+.myPhoto{
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-weight: bold;
     unicode-bidi: isolate;
-    color: #c7bba7;
     margin: 0px 0;
     padding-left: 40px;
     padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    color: #c7bba7;
+}
+
+
+.head_add {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.head_add button{
+    height: 20px;
+    margin-right: 10%;
+    float: right;
+    margin-top: 15px;
+    background-color: #161615;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.head_add button:hover{
+    float: right;
+    background-color:  #272726;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
 }

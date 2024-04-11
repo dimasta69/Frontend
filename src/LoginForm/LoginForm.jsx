@@ -26,10 +26,12 @@ function LoginForm() {
             password: password2,
         }
 
+
         axios.post(url, data)
           .then(function (response) {
             unlock(response.data.auth_token);
             localStorage.setItem('token', response.data.auth_token);
+            console.log(123)
           })
           .catch(function (error) {
             console.log(error);
@@ -42,11 +44,13 @@ function LoginForm() {
                 'Authorization': 'Token ' + localStorage.getItem('token')
               }
             })
-            console.log(223)
             axiosInstance.get('http://127.0.0.1:8000/core_api/profile/').then(function(response)
             {
               localStorage.setItem('user_id', response.data.id);
-              console.log(response.data)
+              localStorage.setItem('email', response.data.email);
+              localStorage.setItem('username', response.data.username);
+              localStorage.setItem('is_active', response.data.is_active);
+              localStorage.setItem('image', 'http://127.0.0.1:8000/' + response.data.image);
               window.location.reload()
             }).catch(function (error) {
               console.log(error);

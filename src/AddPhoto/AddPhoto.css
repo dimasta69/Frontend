@@ -1,8 +1,27 @@
 .addPhoto{
     padding-top: 33px;
-    padding-left: 180px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }
 
 .addButton{
-    margin: 50px 150px;
+    margin: 50px auto 150px;
+    margin-top: 15px;
+    background-color: #161615;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
+    height: 25px;
+    width: 82px;
+    float: right;
+}
+
+.addButton:hover{
+    background-color:  #272726;
+    border: solid #272726;
+    color: #605b53;
+    cursor: pointer;
 }

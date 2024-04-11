@@ -1,5 +1,7 @@
 .imgPhoto{
-    padding-top: 30px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .imgLabel{

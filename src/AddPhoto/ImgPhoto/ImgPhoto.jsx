@@ -2,11 +2,17 @@ import React from "react";
 import "./ImgPhoto.css"
 
 
-const ImgPhoto = () => {
+const ImgPhoto = ({handleFileChange}) => {
+
+    const handleFileInputChange = (e) => {
+        handleFileChange(e);
+    };
+
+
     return (
         <div className='imgPhoto'>
             <label className="imgLabel">Загрузить изображение:</label>
-            <input type="file" accept="image/*" className='imgInput'/>
+            <input id='photo' type="file" accept="image/*" className='imgInput' onChange={handleFileInputChange} />
         </div>
     )
 }
