@@ -47,7 +47,6 @@ class WebSocketComponent extends Component {
 
   render() {
     if(this.state.message){
-
     if(JSON.parse(this.state.message).message == 'Status changed')
     {
       return (
@@ -71,6 +70,34 @@ class WebSocketComponent extends Component {
               <p>{JSON.parse(this.state.message).message} id: {JSON.parse(this.state.message).photo_id}, наименование: "{JSON.parse(this.state.message).title}"</p>
               <p>пользователем: {JSON.parse(this.state.message).username}</p>
               <p style={{'color': 'red'}}>общее количество лайков: {JSON.parse(this.state.message).count_like}</p>
+            </div>
+          </Modal>
+          {this.state.isOpen && <div className="overlay" style={{ display: 'none' }}/>}
+        </div>
+      );
+    }
+    else if(JSON.parse(this.state.message).message == 'Добавлен комментарий')
+    {
+      return (
+        <div>
+          <Modal isOpen={this.state.isOpen}  className="modal">
+            <div>
+              <p>{JSON.parse(this.state.message).message} id: {JSON.parse(this.state.message).photo_id}, наименование: "{JSON.parse(this.state.message).title}"</p>
+              <p>пользователем: {JSON.parse(this.state.message).username}</p>
+              <p style={{'color': 'red'}}>общее количество комментариев: {JSON.parse(this.state.message).count_comments}</p>
+            </div>
+          </Modal>
+          {this.state.isOpen && <div className="overlay" style={{ display: 'none' }}/>}
+        </div>
+      );
+    }
+    else if(JSON.parse(this.state.message).message == 'Ваш комментарий скоро будет удален')
+    {
+      return (
+        <div>
+          <Modal isOpen={this.state.isOpen}  className="modal">
+            <div>
+              <p>{JSON.parse(this.state.message).message} id: {JSON.parse(this.state.message).photo_id}, наименование: "{JSON.parse(this.state.message).title}"</p>
             </div>
           </Modal>
           {this.state.isOpen && <div className="overlay" style={{ display: 'none' }}/>}
