@@ -54,12 +54,12 @@ const Sort = ({sort_desc}) => {
     }
 
     let date, comment, like;
-        date = 'http://localhost:3000/'
-    let date1 = 'http://localhost:3000/sort_by/date/asc/'
-        comment = 'http://localhost:3000/sort_by/count_comment/desc/'
-    let comment1 = 'http://localhost:3000/sort_by/count_comment/asc/'    
-        like = 'http://localhost:3000/sort_by/count_like/desc/'
-    let like1 = 'http://localhost:3000/sort_by/count_like/asc/'
+        date = '/'
+    let date1 = '/sort_by/date/asc/'
+        comment = '/sort_by/count_comment/desc/'
+    let comment1 = '/sort_by/count_comment/asc/'    
+        like = '/sort_by/count_like/desc/'
+    let like1 = '/sort_by/count_like/asc/'
     
 
     return(

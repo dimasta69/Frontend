@@ -45,7 +45,7 @@ const AddPhoto = ({dataCategory}) => {
         Data.append('category_id', document.getElementById("categorySelect").value)
         console.log(data)
 
-        axiosInstance.post('http://127.0.0.1:8000/core_api/photos/', data)
+        axiosInstance.post('/core_api/photos/', data)
         .then(response => {   
             console.log(response.headers); 
         })  

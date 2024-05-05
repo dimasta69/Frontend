@@ -19,7 +19,7 @@ const Contents = ({dataCategory}) => {
 
     const {id} = useParams();
     const [dataFromBackend, setDataFromBackend] = useState(null); 
-    let Url = 'http://127.0.0.1:8000/core_api/photo/' + id; 
+    let Url = '/core_api/photo/' + id; 
 
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Contents = ({dataCategory}) => {
 
 
         const [dataBackend, setDataBackend] = useState(null); 
-        let UrlLike = "http://127.0.0.1:8000/core_api/like/?photo_id=" + id
+        let UrlLike = "/core_api/like/?photo_id=" + id
 
         useEffect(() => {
             if (localStorage.getItem('token')) {

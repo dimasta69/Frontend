@@ -51,7 +51,7 @@ const PhotoOne = ({ data, like, dataCategory}) => {
 
 
         const ChangePost = () => {
-            let Url = 'http://127.0.0.1:8000/core_api/photo/' + data.id + '/'
+            let Url = '/core_api/photo/' + data.id + '/'
             const formData1 = new FormData();
 
             formData1.append('description', document.getElementById('changeDesc').value); 
@@ -75,7 +75,7 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         }
 
         const DeletePost = () => {
-            let Url = 'http://127.0.0.1:8000/core_api/photo/' + data.id + '/'
+            let Url = '/core_api/photo/' + data.id + '/'
 
             axiosPost.delete(Url)
             .then(response => {
@@ -87,7 +87,7 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         }
 
         const ChangeDeletePost = () => {
-            let Url = 'http://127.0.0.1:8000/core_api/photo/' + data.id + '/'
+            let Url = '/core_api/photo/' + data.id + '/'
 
             axiosPost.patch(Url)
             .then(response => {
@@ -144,12 +144,12 @@ const PhotoOne = ({ data, like, dataCategory}) => {
         return null; 
     }
     
-    let Url = "http://127.0.0.1:8000/" + data.photo;
+    let Url = data.photo;
 
     let enter = () => {
         if (localStorage.getItem('token'))
         {
-            let Url = 'http://127.0.0.1:8000/core_api/like/?photo_id=' + data.id
+            let Url = '/core_api/like/?photo_id=' + data.id
             axiosInstance.post(Url)
             .then(response => {
                 changeButtonStyle1();

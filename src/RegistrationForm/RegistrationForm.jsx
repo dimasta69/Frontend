@@ -9,15 +9,22 @@ function RegistrationForm() {
         cls.classList.toggle('hidden');
     }
 
-            let login2
-            let password2
+    let login2
+    let password2
 
+    const handleKeyPress = (event) => {
+      if (event.key == 'Enter')
+        {
+          enter();
+        }
+    }
+    
     let enter = () => {     
 
         let login1 = document.getElementById('login').value
         let email1 = document.getElementById('email').value
         let password1 = document.getElementById('password').value
-        const url = 'http://127.0.0.1:8000/core_api/auth/users/';
+        const url = '/core_api/auth/users/';
             
         const data = new FormData();
         data.append('email', email1);
@@ -36,7 +43,7 @@ function RegistrationForm() {
     }
 
     let enter1 = () => {     
-      const url4 = 'http://127.0.0.1:8000/core_api/auth/token/login/';
+      const url4 = '/core_api/auth/token/login/';
           
       const data3 = new FormData();
       data3.append('username', document.getElementById('login').value);
@@ -56,14 +63,14 @@ function RegistrationForm() {
                 'Authorization': 'Token ' + localStorage.getItem('token')
               }
             })
-            axiosInstance.get('http://127.0.0.1:8000/core_api/profile/').then(function(response)
+            axiosInstance.get('/core_api/profile/').then(function(response)
             {
               localStorage.setItem('user_id', response.data.id);
               localStorage.setItem('email', response.data.email);
               localStorage.setItem('username', response.data.username);
               localStorage.setItem('password', response.data.username);
               localStorage.setItem('is_active', response.data.is_active);
-              localStorage.setItem('image', 'http://127.0.0.1:8000/' + response.data.image)
+              localStorage.setItem('image', response.data.image)
               window.location.reload()
             }).catch(function (error) {
               console.log(error);
@@ -81,7 +88,7 @@ function RegistrationForm() {
                 <input className="email" type="text" placeholder='Email' id='email'/>
                 <input className="password" type="password" placeholder='Password' id='password'/>
                 <input className="confirmPassword" type="password" placeholder='Confirm password'/>
-                <a href=" ">Google</a>
+                <a href="/core_api/social/login/google-oauth2/">Google</a>
                 <button className='buttons' onClick={enter}>Зарегестрироваться</button>
                 <button className='buttons' onClick={enter1}>Почта подтверждена</button>
             </div>

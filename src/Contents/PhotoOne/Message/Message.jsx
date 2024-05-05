@@ -29,7 +29,7 @@ const Message = ({id, buttonReply, SetReply, buttonChange, SetChange}) => {
             formData.append('reply_id', buttonReply.id)
         }
 
-        axiosInstance.post("http://127.0.0.1:8000/core_api/comments/", formData)
+        axiosInstance.post("/core_api/comments/", formData)
             .then(response => {
                 window.location.reload();
             }
@@ -41,7 +41,7 @@ const Message = ({id, buttonReply, SetReply, buttonChange, SetChange}) => {
     const changeSend = () => {
         const formData = new FormData();
     formData.append('text', document.getElementById('myTextarea').value);        
-    const Url = 'http://127.0.0.1:8000/core_api/comment/' + buttonChange.id + '/';
+    const Url = '/core_api/comment/' + buttonChange.id + '/';
             
         axiosInstance.put(Url, formData)
             .then(response => {

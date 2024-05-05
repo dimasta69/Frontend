@@ -2,7 +2,7 @@ import React from "react";
 import "./Photo.css";
 
 const Photo = (props) => {
-    const imageUrl = 'http://127.0.0.1:8000/' + props.photo;
+    const imageUrl = props.photo;
 
 
 

@@ -22,7 +22,7 @@ const MyPhoto = () => {
 
     const [dataFromBackend, setDataFromBackend] = useState(null); 
 
-    let Url = 'http://127.0.0.1:8000/core_api/photos/?user_id=' + localStorage.getItem('user_id') + "&status=" + status
+    let Url = '/core_api/photos/?user_id=' + localStorage.getItem('user_id') + "&status=" + status
     
 
     const fetchData = (page) => {

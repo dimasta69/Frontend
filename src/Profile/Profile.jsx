@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLocation } from 'react';
 import "./Profile.css";
 import image123 from './123.png';
 import  axios  from 'axios';
@@ -13,6 +13,22 @@ const axiosInstance = axios.create({
 
 const Profile = () => {
   const [photo, setPhoto] = useState(null);
+  const [loading, setLoading] = useState(true);
+  console.log(localStorage.getItem('image'))
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const accessToken = urlParams.get('token');
+    
+    if (accessToken && !localStorage.getItem('token')) {
+      localStorage.setItem('token', accessToken);
+      handleRefreshToken();
+    }
+  }, []);
+
+
+
+
 
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
@@ -24,9 +40,9 @@ const Profile = () => {
       const formData = new FormData();
       formData.append('image', photo);
   
-      axiosInstance.post('http://127.0.0.1:8000/core_api/profile/', formData)
+      axiosInstance.post('/core_api/profile/', formData)
         .then(response => {
-          localStorage.setItem('image', 'http://127.0.0.1:8000/' + response.data.image)
+          localStorage.setItem('image', response.data.image)
           window.location.reload()
         })
         .catch(error => {
@@ -38,41 +54,48 @@ const Profile = () => {
   const handleRefreshToken = () => {
     const data4 = new FormData();
     data4.append('username', localStorage.getItem('username'));
-    data4.append('password', localStorage.getItem('password'));
+    data4.append('password', localStorage.getItem('password')); 
 
-    const url = 'http://127.0.0.1:8000/core_api/auth/token/refresh/';
-  
-      axios.post(url, data4)
-          .then(function (response) {
+    const url = '/core_api/auth/token/refresh/';
+
+    axios.post(url, data4)
+        .then(function (response) {
             localStorage.setItem('token', response.data.auth_token);
-            window.location.reload()
-          })
-          .catch(function (error) {
+            // Проверяем успешность обновления токена
+            if(response.data.auth_token) {
+                window.location.reload();
+            } else {
+                console.log('Не удалось обновить токен');
+            }
+        })
+        .catch(function (error) {
             console.log(error);
-          })
-          .finally(() => {
+        })
+        .finally(() => {
             const axiosInstance = axios.create({
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + localStorage.getItem('token')
-              }
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Token ' + localStorage.getItem('token')
+                }
             })
-            axiosInstance.get('http://127.0.0.1:8000/core_api/profile/').then(function(response)
-            {
-              localStorage.setItem('user_id', response.data.id);
-              localStorage.setItem('email', response.data.email);
-              localStorage.setItem('username', response.data.username);
-              localStorage.setItem('is_active', response.data.is_active);
-              localStorage.setItem('password', response.data.username);
-              localStorage.setItem('image', 'http://127.0.0.1:8000/' + response.data.image)
-              window.location.reload()
+            axiosInstance.get('/core_api/profile/').then(function(response) {
+                localStorage.setItem('user_id', response.data.id);
+                localStorage.setItem('email', response.data.email);
+                localStorage.setItem('username', response.data.username);
+                localStorage.setItem('is_active', response.data.is_active);
+                localStorage.setItem('password', response.data.username);
+                localStorage.setItem('image', response.data.image)
+                if(response.data.id) {
+                    window.location.reload();
+                } else {
+                    console.log('Не удалось получить данные профиля');
+                }
             }).catch(function (error) {
-              console.log(error);
+                console.log(error);
             })
+        });
 
-          });
-
-  };
+};
 
   return (
     <div className='Profile'>

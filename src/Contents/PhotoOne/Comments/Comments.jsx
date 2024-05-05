@@ -6,7 +6,7 @@ import './Comments.css';
 import Comment from "./Comment/Comment";
 
 const Comments = ({id, SetReply, SetChange, dataFromBackend, setDataFromBackend, page}) => {
-    let Url = 'http://127.0.0.1:8000/core_api/comments/?photo_id=' + id + '&page=' + page; 
+    let Url = '/core_api/comments/?photo_id=' + id + '&page=' + page; 
     useEffect(() => {
         axios.get(Url)
             .then(response => {
@@ -45,7 +45,7 @@ const Comments = ({id, SetReply, SetChange, dataFromBackend, setDataFromBackend,
     return (
         <div className="comments">
              {arr.map((item) => {
-                let rl = 'http://localhost:3000/photo/' + item.id;
+                let rl = '/photo/' + item.id;
                 if (item.reply_id == null) {
                 return (
                     

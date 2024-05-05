@@ -8,7 +8,7 @@ const Category = ({setDataCategory}) => {
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/core_api/categories/')
+        axios.get('/core_api/categories/')
             .then(response => { 
                 setCategory(response.data)
                 let category = response.data 

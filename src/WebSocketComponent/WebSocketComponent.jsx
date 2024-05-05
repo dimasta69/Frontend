@@ -14,7 +14,7 @@ class WebSocketComponent extends Component {
   }
 
   componentDidMount() {
-    const websocket = new WebSocket('ws://127.0.0.1:7000/ws/change_status/' + localStorage.getItem('user_id') + "/");
+    const websocket = new WebSocket('wss://photo1craft.ru/ws/change_status/' + localStorage.getItem('user_id') + "/");
 
     websocket.onopen = () => {
       console.log('WebSocket connected');

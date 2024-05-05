@@ -21,14 +21,17 @@ const Header = () => {
     
 
     let leave = function() {
-        axiosInstance.post('http://127.0.0.1:8000/core_api/auth/token/logout/')
+        axiosInstance.post('/core_api/auth/token/logout/')
         .then(function (response) {
             localStorage.setItem('token', response.data.auth_token);
+            localStorage.clear();
+            window.location.replace("/")
           })
           .catch(function (error) {
             console.log(error);
           });
           localStorage.clear()
+          window.location.href = "/core_api";
     }
 
 
@@ -42,11 +45,11 @@ const Header = () => {
     {
         return (
             <header>
-                <h1><a href="http://localhost:3000">PhotoCraft</a></h1>
+                <h1><a href="/">PhotoCraft</a></h1>
                 <div id="logreg" className="logReg">
-                <a id="cabinet" className="cabinet" href="http://localhost:3000/profile">Личный кабинет</a>
-            <a id="my-photos" className="my-photos" href="http://localhost:3000/my_photo/status/Published">Мои фото</a>
-            <a id="leave" className="leave" href=" " onClick={leave}>Выйти</a>
+                <a id="cabinet" className="cabinet" href="/profile">Личный кабинет</a>
+            <a id="my-photos" className="my-photos" href="/my_photo/status/Published">Мои фото</a>
+            <a id="leave" className="leave" href="/" onClick={leave}>Выйти</a>
                 </div>
             </header>
     );
@@ -54,7 +57,7 @@ const Header = () => {
     else {
         return (
             <header>
-                <h1><a href="http://localhost:3000">PhotoCraft</a></h1>
+                <h1><a href="/">PhotoCraft</a></h1>
                 <div id="logreg" className="logReg">
                     <a id="enter" href=" " onClick={enter}>Войти</a>
                     <a id="register" href="" onClick={register} >Регистрация</a>

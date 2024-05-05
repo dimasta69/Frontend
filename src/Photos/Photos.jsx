@@ -10,7 +10,7 @@ const Photos = ({ data }) => {
     return (
         <div className="photos">
             {data.results.map((item) => {
-                let rl = 'http://localhost:3000/photo/' + item.id;
+                let rl = '/photo/' + item.id;
                 return (
                     <a key={item.id} style={{ textDecoration: 'none' }} href={rl}>
                         <Conteiner photoData={item} />

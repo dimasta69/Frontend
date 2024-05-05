@@ -27,6 +27,10 @@
     font-size: 1vw;
 }
 
+div#bgreg {
+    background: border-box;
+}
+
 .buttons  {
     width: 100px;
     outline: none;

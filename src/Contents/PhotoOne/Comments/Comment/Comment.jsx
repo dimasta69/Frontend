@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
 
 const Comment = ({data, user_id, reply, SetReply, SetChange, dataFromBackend}) => {
     const handleDeleteComment = () => {
-        axiosInstance.delete('http://127.0.0.1:8000/core_api/comment/' + data.id)
+        axiosInstance.delete('/core_api/comment/' + data.id)
           .then(response => {
             window.location.reload()
           })

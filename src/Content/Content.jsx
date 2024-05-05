@@ -50,7 +50,7 @@ const Content = () => {
 
     const fetchData = (page) => { 
         if (category){ 
-            Url = 'http://127.0.0.1:8000/core_api/photos/?category_id=' + category
+            Url = '/core_api/photos/?category_id=' + category
             if (!parm)
             {
                 Url = Url + '&order_by=' + desc + 'publicated_at'
@@ -82,7 +82,7 @@ const Content = () => {
             } 
             } 
             else { 
-                Url = 'http://127.0.0.1:8000/core_api/photos/?page=' + page 
+                Url = '/core_api/photos/?page=' + page 
                 if (!parm  || parm == 'date')
             {
                 Url = Url + '&order_by=' + desc + 'publicated_at'
@@ -98,7 +98,7 @@ const Content = () => {
             } 
         } 
          else { 
-            Url = 'http://127.0.0.1:8000/core_api/photos/'; 
+            Url = '/core_api/photos/'; 
             if (!parm)
             {
                 Url = Url + '?order_by=' + desc + 'publicated_at'
@@ -143,10 +143,10 @@ const Content = () => {
 
         if (category){
  
-        let Url1 = 'http://127.0.0.1:8000/core_api/category/' + category 
-        axiosInstance.get(Url1) 
+        let Url1 = '/core_api/category/' + category 
+        axios.get(Url1) 
             .then(response => {  
-                setDataCat(response.data); 
+                setDataCat(response.data.title); 
             })  
             .catch(error => {  
                 console.error(error);  
