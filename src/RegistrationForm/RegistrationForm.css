@@ -97,3 +97,17 @@ div#bgreg {
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(3px);
 }
+.reg {
+    color: grey;
+    text-align: center;
+    margin: 0;
+}
+
+.google {
+    color: pink;
+    text-decoration: none;
+}
+
+.google:hover {
+    color: white;
+}

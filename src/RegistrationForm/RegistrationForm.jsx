@@ -7,10 +7,13 @@ function RegistrationForm() {
         event.preventDefault();
         let cls = document.getElementById('bgreg');
         cls.classList.toggle('hidden');
+        setMessage(null)
     }
 
     let login2
     let password2
+
+    const [message, setMessage] = useState(null);
 
     const handleKeyPress = (event) => {
       if (event.key == 'Enter')
@@ -36,9 +39,11 @@ function RegistrationForm() {
             console.log(response);
             login2 = login1
             password2 = password1
+            setMessage('Перейдите по ссылке, отправленной вам на почту. После нажмите кнопку "Почта подтверждена".')
           })
           .catch(function (error) {
-            console.log(error);
+            console.log(error)
+            setMessage(error.message)
           });
     }
 
@@ -79,21 +84,24 @@ function RegistrationForm() {
           });
   }
 
+
     return(
-        <div id="bgreg" className="bg hidden">
-            <div id="regform" className='regform'>
-                <button id="close" className='close' onClick={cls}></button>
-                <h1>Регистрация</h1>
-                <input className="login" type="text" placeholder='Login' id='login'/>
-                <input className="email" type="text" placeholder='Email' id='email'/>
-                <input className="password" type="password" placeholder='Password' id='password'/>
-                <input className="confirmPassword" type="password" placeholder='Confirm password'/>
-                <a href="/core_api/social/login/google-oauth2/">Google</a>
-                <button className='buttons' onClick={enter}>Зарегестрироваться</button>
-                <button className='buttons' onClick={enter1}>Почта подтверждена</button>
-            </div>
-        </div>
-    );
+      <div id="bgreg" className="bg hidden">
+          <div id="regform" className='regform'>
+              <button id="close" className='close' onClick={cls}></button>
+              <h1>Регистрация</h1>
+              <input className="login" type="text" placeholder='Login' id='login'/>
+              <input className="email" type="text" placeholder='Email' id='email'/>
+              <input className="password" type="password" placeholder='Password' id='password'/>
+              <input className="confirmPassword" type="password" placeholder='Confirm password'/>
+              <a className='google' href="/core_api/social/login/google-oauth2/">Google</a>
+              <button className='buttons' onClick={enter}>Зарегестрироваться</button>
+              {message && <p className='reg'>{message}</p>}
+              <button className='buttons' onClick={enter1}>Почта подтверждена</button>
+          </div>
+      </div>
+  );
+
 }
 
 export default RegistrationForm;

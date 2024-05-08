@@ -1,66 +1,46 @@
 import React, { useState, useEffect } from "react"; 
 import './Sort.css' 
-import { useParams } from "react-router-dom"; 
+
  
-const Sort = ({sort_desc}) => { 
-    const [selectedItem, setSelectedItem] = useState('Количество голосов'); 
-    const [isOpen, setIsOpen] = useState(false); 
+const Sort = ({handleSelectChange, sort_desc, fetchData}) => { 
  
     let somefunc = function(event) {
-        if (event.target.getAttribute("id") == 'ganji') 
-        {
+
             let sort = document.getElementById('list'); 
             sort.classList.toggle('hidden');
-        } 
+
     } 
  
-    const handleItemClick = (item) => { 
-        setSelectedItem(item); 
-        setIsOpen(false) 
+    const handleItemClick = () => { 
+        handleSelectChange('+Дата добавления')
     } 
-    const toggleList = () => { 
-        setIsOpen(!isOpen);  
-    }; 
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            const sortList = document.getElementById('list');
-            if (sortList && !sortList.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
+    const handleItemClick2 = () => { 
+        handleSelectChange('-Дата добавления')
+    } 
+    const handleItemClick3 = () => { 
+        handleSelectChange('+Количество комментариев')
+    } 
+    const handleItemClick4 = () => { 
+        handleSelectChange('-Количество комментариев')
+    } 
+    const handleItemClick5 = () => { 
+        handleSelectChange('+Количество голосов')
+    } 
+    const handleItemClick6 = () => { 
+        handleSelectChange('-Количество голосов')
+    } 
 
 
-    let sort = useParams().sort_by
 
-    let sort_name;
-    if(!sort || sort == 'date')
-    {
-        sort_name = "дате"
+    let sort_name
+
+    if (!sort_desc)
+        {
+             sort_name = 'дате';
+        }
+    else {
+         sort_name = sort_desc;
     }
-    else if (sort == 'count_comment')
-    {
-        sort_name = 'количеству коментариев'
-    }
-    else if (sort == 'count_like')
-    {
-        sort_name = 'количеству лайков'
-    }
-
-    let date, comment, like;
-        date = '/'
-    let date1 = '/sort_by/date/asc/'
-        comment = '/sort_by/count_comment/desc/'
-    let comment1 = '/sort_by/count_comment/asc/'    
-        like = '/sort_by/count_like/desc/'
-    let like1 = '/sort_by/count_like/asc/'
-    
 
     return(
         <div>
@@ -68,12 +48,12 @@ const Sort = ({sort_desc}) => {
             <p id="ganji" onClick={somefunc} className="ganji">{sort_name}</p>
             <p>Сортировка по:</p>
             <ul className="list hidden" id ='list'>
-                <li><a href={date} onClick={() => handleItemClick('-Дата добавления')}>+дате</a></li>
-                <li><a href={date1} onClick={() => handleItemClick('-Дата добавления')}>-дате</a></li>
-                <li><a href={comment} onClick={() => handleItemClick('+Количество комментариев')}>+количеству комментариев</a></li>
-                <li><a href={comment1} onClick={() => handleItemClick('-Количество комментариев')}>-количеству комментариев</a></li>
-                <li><a href={like} onClick={() => handleItemClick('+Количество голосов')}>+количеству голосов</a></li>
-                <li><a href={like1} onClick={() => handleItemClick('-Количество голосов')}>-количеству голосов</a></li>
+                <li><buttun onClick={handleItemClick}>+дате</buttun></li>
+                <li><buttun onClick={handleItemClick2}>-дате</buttun></li>
+                <li><buttun  onClick={handleItemClick3}>+количеству комментариев</buttun></li>
+                <li><buttun  onClick={handleItemClick4}>-количеству комментариев</buttun></li>
+                <li><buttun  onClick={handleItemClick5}>+количеству голосов</buttun></li>
+                <li><buttun onClick={handleItemClick6}>-количеству голосов</buttun></li>
             </ul>
         </nav>
         </div>

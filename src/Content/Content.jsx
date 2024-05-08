@@ -25,9 +25,12 @@ const Content = () => {
     let ss = useParams().asc;
     
     const asc = useParams().asc
-    const [sort_desc, setSort_desc] = useState('')
-    const handleSelectChange = (event) => {
-        setSort_desc(event)
+    let [sort_desc, setSort_desc] = useState('')
+    let sort1;
+    let handleSelectChange = (item) => {
+        setSort_desc(item)
+        sort1 = item
+        fetchData()
     };
 
    
@@ -49,69 +52,39 @@ const Content = () => {
     } 
 
     const fetchData = (page) => { 
-        if (category){ 
-            Url = '/core_api/photos/?category_id=' + category
-            if (!parm)
-            {
-                Url = Url + '&order_by=' + desc + 'publicated_at'
-            }
-            else if (parm == 'count_comment')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_comments'   
-            }
-            else if (parm == 'count_like')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_likes'
-            } 
-        } 
-        else if (page) { 
-            if (category) 
-            { 
-                Url = Url + '&page=' + page ; 
-                if (!parm)
-            {
-                 Url = Url + '&order_by=' + desc + 'publicated_at'
-            }
-            else if (parm == 'count_comment')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_comments'   
-            }
-            else if (parm == 'count_like')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_likes'
-            } 
-            } 
-            else { 
-                Url = '/core_api/photos/?page=' + page 
-                if (!parm  || parm == 'date')
-            {
-                Url = Url + '&order_by=' + desc + 'publicated_at'
-            }
-            else if (parm == 'count_comment')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_comments'   
-            }
-            else if (parm == 'count_like')
-            {
-                Url = Url + '&order_by=' + desc + 'number_of_likes'
-            } 
-            } 
-        } 
-         else { 
-            Url = '/core_api/photos/'; 
-            if (!parm)
-            {
-                Url = Url + '?order_by=' + desc + 'publicated_at'
-            }
-            else if (parm == 'count_comment')
-            {
-                Url = Url + '?order_by=' + desc + 'number_of_comments'   
-            }
-            else if (parm == 'count_like')
-            {
-                Url = Url + '?order_by=' + desc + 'number_of_likes'
-            } 
-        }
+        // Url = '/core_api/photos/?'
+        // if (page)
+        //     {Url = Url + 'page=' + page + '&'}
+        // if (category)
+        //     {Url = Url + 'category_id=' + category + '&'}
+        // if (!parm)
+        //     {Url = Url + 'order_by=' + '-publicated_at' + '&'}
+        // else if (parm == 'date')
+        //     {Url = Url + 'order_by=' + 'publicated_at' + '&'}
+        // else if (parm == 'count_comment')
+        //     {Url = Url + 'order_by=' + desc + 'number_of_comments' + '&'}
+        // else if (parm == 'count_like')
+        //     {Url = Url + 'order_by=' + desc + 'number_of_likes' + '&'}
+
+
+        Url = '/core_api/photos/?'
+        if (page)
+            {Url = Url + 'page=' + page + '&'}
+        if (category)
+            {Url = Url + 'category_id=' + category + '&'}
+        if (!sort1 || sort1 == '-Дата добавления')
+            {Url = Url + 'order_by=' + '-publicated_at' + '&'}
+        else if (sort1 == '+Дата добавления')
+            {Url = Url + 'order_by=' + 'publicated_at' + '&'}
+        else if (sort1 == '-Количество комментариев')
+            {Url = Url + 'order_by=' + '-number_of_comments' + '&'}
+        else if (sort1 == '+Количество комментариев')
+            {Url = Url + 'order_by=' + 'number_of_comments' + '&'}
+        else if (sort1 == '-Количество голосов')
+            {Url = Url + 'order_by=' + '-number_of_likes' + '&'}
+        else if (sort1 == '+Количество голосов')
+            {Url = Url + 'order_by=' + 'number_of_likes' + '&'}
+
 
         if (src) {
             Url += src;
@@ -168,7 +141,7 @@ const Content = () => {
     return ( 
         <div className="content" id='content'> 
             <input id="search" className="search" type="text" placeholder="Поиск..." onInput={srch}/> 
-            <Head dataCat={dataCat} handleSelectChange={handleSelectChange} sort_desc={sort_desc}/> 
+            <Head dataCat={dataCat} handleSelectChange={handleSelectChange} setSort_desc={setSort_desc} sort_desc={sort_desc} fetchData={fetchData}/> 
             <Photos data={dataFromBackend}/> 
             <Pagination data={dataFromBackend} fetchData={fetchData} /> 
         </div> 

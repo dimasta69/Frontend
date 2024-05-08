@@ -76,7 +76,7 @@ function LoginForm() {
                 <h1>Login</h1>
                 <input className="login" type="text" placeholder='Login' id='login2'/>
                 <input className="password" type="password" placeholder='Password' id='password2'/>
-                <a href="http:127.0.0.1:8000/core_api/social/login/google-oauth2/">Google</a>
+                <a href="/core_api/social/login/google-oauth2/">Google</a>
                 <button onClick={enter}>Confirm</button>
                 {loading && <div className="loader">Loading..</div>}
             </div>
