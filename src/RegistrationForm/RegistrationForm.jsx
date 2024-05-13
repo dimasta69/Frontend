@@ -40,6 +40,9 @@ function RegistrationForm() {
             login2 = login1
             password2 = password1
             setMessage('Перейдите по ссылке, отправленной вам на почту. После нажмите кнопку "Почта подтверждена".')
+            localStorage.setItem('username', login1)
+            localStorage.setItem('password', password1)
+            localStorage.setItem('email', email1)
           })
           .catch(function (error) {
             console.log(error)

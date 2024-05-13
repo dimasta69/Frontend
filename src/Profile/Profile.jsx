@@ -24,6 +24,43 @@ const Profile = () => {
       localStorage.setItem('token', accessToken);
       handleRefreshToken();
     }
+    else if (!localStorage.getItem('token') && localStorage.getItem('password') && localStorage.getItem('username'))
+      {
+        const url = '/core_api/auth/token/login/';
+            
+        const data = {
+            username: localStorage.getItem('username'),
+            password: localStorage.getItem('password'),
+        }
+
+        axios.post(url, data)
+          .then(function (response) {
+            localStorage.setItem('token', response.data.auth_token);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .finally(() => {
+            const axiosInstance = axios.create({
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Token ' + localStorage.getItem('token')
+              }
+            })
+            axiosInstance.get('/core_api/profile/').then(function(response)
+            {
+              localStorage.setItem('user_id', response.data.id);
+              localStorage.setItem('email', response.data.email);
+              localStorage.setItem('username', response.data.username);
+              localStorage.setItem('is_active', response.data.is_active);
+              localStorage.setItem('image',  response.data.image);
+              window.location.reload()
+            }).catch(function (error) {
+              console.log(error);
+            })
+
+          });
+      }
   }, []);
 
 
